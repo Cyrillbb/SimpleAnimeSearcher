@@ -26,21 +26,21 @@ export class Main extends React.Component {
     handleButtonSort = (event) => {
         this.setState({ searchType: event.target.value, searchInput: '', pgOffset: 0 }, () => {
             fetcher(urlConstructor(this.state))
-                .then(data => this.setState({ searchResults: data.slice() }, console.log(urlConstructor(this.state))))
+                .then(data => this.setState({ searchResults: data.slice() }))
         })
     }
 
     handleInputSearch = (event) => {
         this.setState({ searchInput: event.target.value, pgOffset: 0 }, () => {
             fetcher(urlConstructor(this.state))
-                .then(data => this.setState({ searchResults: data.slice() }, console.log(urlConstructor(this.state))))
+                .then(data => this.setState({ searchResults: data.slice() }))
         })
     }
 
     handleMore = () => {
         this.setState({ pgOffset: this.state.pgOffset + queryParts.resultsNum }, () => {
             fetcher(urlConstructor(this.state))
-                .then(data => this.setState({ searchResults: this.state.searchResults.concat(data) }, console.log(this.state)))
+                .then(data => this.setState({ searchResults: this.state.searchResults.concat(data) }))
         })
     }
 
