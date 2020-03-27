@@ -1,7 +1,7 @@
 import React from 'react';
 import { urlConstructor, fetcher } from '../actions'
 import Header from './Header/Header'
-import { queryParts } from '../constants'
+import { queryParts, sortTypes } from '../constants'
 import { AnimeList } from './AnimeList/AnimeList'
 
 export class Main extends React.Component {
@@ -9,7 +9,7 @@ export class Main extends React.Component {
         super(props)
         this.state = {
             searchInput: '',
-            searchType: 'mostPop',
+            searchType: sortTypes.byPop,
             searchResults: [],
             favotites: [],
             pgOffset: 0,
