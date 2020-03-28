@@ -7,12 +7,12 @@ export function AnimeList(props) {
             <div>
                 <div>
                     {props.animeArr.map((item) =>
-                        <AnimeCard key={item.attributes.canonicalTitle}>
+                        <AnimeCard key={item.id}>
                             <h3>
                                 <span className='favIcon'>
-                                    {props.favArr.indexOf(item) === -1 ?
-                                        <i className="far fa-star" onClick={(event) => { props.fav(item) }}></i>
-                                        : <i className="fas fa-star" onClick={(event) => { props.fav(item) }}></i>
+                                    {props.favId.indexOf(item.id) === -1 ?
+                                        <i className="far fa-star" onClick={() => { props.fav(item) }}></i>
+                                        : <i className="fas fa-star" onClick={() => { props.fav(item) }}></i>
                                     }
                                 </span>
                                 Title: {item.attributes.canonicalTitle}

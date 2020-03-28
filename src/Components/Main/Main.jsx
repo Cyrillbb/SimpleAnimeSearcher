@@ -18,15 +18,29 @@ export class Main extends React.Component {
             searchType: sortTypes.byPop,
             searchResults: [],
             favorites: [],
+            favId: [],
             pgOffset: 0,
         }
 
     }
 
     componentDidMount() {
+        if(localStorage.length > 0)    {
+            let fuck = JSON.parse(localStorage.getItem('1'))
+            this.setState({favorites: JSON.parse(localStorage.getItem('1')),
+                            favId: JSON.parse(localStorage.getItem('2'))
+        })
+        }
         fetcher(urlConstructor(this.state))
-            .then(data => this.setState({ searchResults: data }))
-            .then(console.log(this.state))
+            .then(data => this.setState({ searchResults: data }), console.log(this.state))                   
+    }   
+
+    componentDidUpdate() {
+        if(this.state.favorites.length > 0) {
+            localStorage.setItem('1', JSON.stringify(this.state.favorites))
+            localStorage.setItem('2', JSON.stringify(this.state.favId))
+        }
+        console.log(this.state)
     }
 
     handleButtonSort = (event) => {
@@ -68,14 +82,20 @@ export class Main extends React.Component {
         )
     }
 
-    handleFav = (item) => {
-        if (this.state.favorites.indexOf(item) === -1) {
-            this.setState({ favorites: this.state.favorites.concat([item]) })
+    handleFav = (item) => { 
+        localStorage.clear()      
+        if (this.state.favorites.indexOf(item) === -1 && this.state.favId.indexOf(item.id) === -1) {
+            this.setState({ 
+                favorites: this.state.favorites.concat([item]),
+                favId: this.state.favId.concat([item.id])
+            })
         }
         else {
             let favCopy = this.state.favorites;
-            favCopy.splice(favCopy.indexOf(item), 1);
-            this.setState({ favorites: favCopy })
+            let idCopy = this.state.favId;
+            favCopy.splice(idCopy.indexOf(item.id), 1)
+            idCopy.splice(idCopy.indexOf(item.id), 1)
+            this.setState({ favorites: favCopy, favId: idCopy })
         }
     }
 
@@ -88,6 +108,7 @@ export class Main extends React.Component {
                         <AnimeList
                             animeArr={this.state.searchResults} more={this.handleMore} fav={this.handleFav}
                             favArr={this.state.favorites}
+                            favId={this.state.favId}
                         />
                     </Route>
                     <Route exact path='/favorites'>

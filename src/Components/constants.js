@@ -9,7 +9,7 @@ export const queryParts = {
     pageOff: '&page[offset]=',
 }
 
-export const sortTypes ={
+export const sortTypes = {
     byRating: 'topRated',
     byPop: 'mostPop',
     byTopAir: 'topAir'    

@@ -13,6 +13,7 @@ export const urlConstructor = (state) => {
 
 }
 
+
 export const fetcher = (url) => {
     console.log("hello")
     return (
