@@ -1,6 +1,6 @@
 import React from 'react'
 import './Card.css'
-
+import PropTypes from 'prop-types'
 function AnimeCard(props) {
 
     const handleGrow = (event) => {
@@ -25,3 +25,7 @@ function AnimeCard(props) {
 }
 
 export default AnimeCard
+
+AnimeCard.propTypes = {
+    id: PropTypes.string
+}
