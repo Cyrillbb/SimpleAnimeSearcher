@@ -25,21 +25,21 @@ export class Main extends React.Component {
     }
 
     componentDidMount() {
-        if(localStorage.length > 0)    {
-            let fuck = JSON.parse(localStorage.getItem('1'))
-            this.setState({favorites: JSON.parse(localStorage.getItem('1')),
-                            favId: JSON.parse(localStorage.getItem('2'))
-        })
+        if (localStorage.length > 0) {           
+            this.setState({
+                favorites: JSON.parse(localStorage.getItem('1')),
+                favId: JSON.parse(localStorage.getItem('2'))
+            })
         }
         fetcher(urlConstructor(this.state))
-            .then(data => this.setState({ searchResults: data }))                   
-    }   
+            .then(data => this.setState({ searchResults: data }))
+    }
 
     componentDidUpdate() {
-        if(this.state.favorites.length > 0) {
+        if (this.state.favorites.length > 0) {
             localStorage.setItem('1', JSON.stringify(this.state.favorites))
             localStorage.setItem('2', JSON.stringify(this.state.favId))
-        }        
+        }
     }
 
     handleButtonSort = (event) => {
@@ -63,8 +63,10 @@ export class Main extends React.Component {
                 pgOffset: 0
             },
             () => {
-                fetcher(urlConstructor(this.state))
-                    .then(data => this.setState({ searchResults: data }))
+                setTimeout(() => {
+                    fetcher(urlConstructor(this.state))
+                        .then(data => this.setState({ searchResults: data }))
+                }, 600);
             }
         )
     }
@@ -81,10 +83,10 @@ export class Main extends React.Component {
         )
     }
 
-    handleFav = (item) => { 
-        localStorage.clear()      
+    handleFav = (item) => {
+        localStorage.clear()
         if (this.state.favorites.indexOf(item) === -1 && this.state.favId.indexOf(item.id) === -1) {
-            this.setState({ 
+            this.setState({
                 favorites: this.state.favorites.concat([item]),
                 favId: this.state.favId.concat([item.id])
             })
