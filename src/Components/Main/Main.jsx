@@ -32,15 +32,14 @@ export class Main extends React.Component {
         })
         }
         fetcher(urlConstructor(this.state))
-            .then(data => this.setState({ searchResults: data }), console.log(this.state))                   
+            .then(data => this.setState({ searchResults: data }))                   
     }   
 
     componentDidUpdate() {
         if(this.state.favorites.length > 0) {
             localStorage.setItem('1', JSON.stringify(this.state.favorites))
             localStorage.setItem('2', JSON.stringify(this.state.favId))
-        }
-        console.log(this.state)
+        }        
     }
 
     handleButtonSort = (event) => {
