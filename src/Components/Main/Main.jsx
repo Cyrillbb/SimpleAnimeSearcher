@@ -110,7 +110,7 @@ export class Main extends React.Component {
                             favId={this.state.favId}
                         />
                     </Route>
-                    <Route exact path='/favorites'>
+                    <Route exact path='/SimpleAnimeSearcher/favorites'>
                         <Favorites favArr={this.state.favorites} fav={this.handleFav} />
                     </Route>
                 </Switch>

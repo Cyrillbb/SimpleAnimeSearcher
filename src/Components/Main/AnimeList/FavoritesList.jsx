@@ -1,6 +1,8 @@
 import React from 'react'
 import AnimeCard from './AnimeCard'
 import './List.css'
+import PropTypes from 'prop-types'
+
 export function Favorites(props) {
     return (        
             <div className='list'>
@@ -33,4 +35,8 @@ export function Favorites(props) {
             </div>        
 
     )
+}
+
+AnimeCard.propTypes = {
+    favArr: PropTypes.array
 }

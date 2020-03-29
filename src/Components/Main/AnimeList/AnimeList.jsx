@@ -1,6 +1,7 @@
 import React from 'react'
 import AnimeCard from './AnimeCard'
 import './List.css'
+import PropTypes from 'prop-types'
 
 export function AnimeList(props) {    
 
@@ -46,4 +47,8 @@ export function AnimeList(props) {
 
 
     )
+}
+
+AnimeCard.propTypes = {
+    animeArr: PropTypes.array
 }
