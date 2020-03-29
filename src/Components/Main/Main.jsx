@@ -27,8 +27,8 @@ export class Main extends React.Component {
     componentDidMount() {
         if (localStorage.length > 0) {
             this.setState({
-                favorites: JSON.parse(localStorage.getItem('1')),
-                favId: JSON.parse(localStorage.getItem('2'))
+                favorites: JSON.parse(localStorage.getItem('items')),
+                favId: JSON.parse(localStorage.getItem('ids'))
             })
         }
         fetcher(urlConstructor(this.state))
@@ -37,8 +37,8 @@ export class Main extends React.Component {
 
     componentDidUpdate() {
         if (this.state.favorites.length > 0) {
-            localStorage.setItem('1', JSON.stringify(this.state.favorites))
-            localStorage.setItem('2', JSON.stringify(this.state.favId))
+            localStorage.setItem('items', JSON.stringify(this.state.favorites))
+            localStorage.setItem('ids', JSON.stringify(this.state.favId))
         }
     }
 
@@ -80,7 +80,7 @@ export class Main extends React.Component {
             }
         )
     }
-
+    // Adds clicked item to favorites and also removes them
     handleFav = (item) => {
         localStorage.clear()
         if (this.state.favorites.indexOf(item) === -1 && this.state.favId.indexOf(item.id) === -1) {
