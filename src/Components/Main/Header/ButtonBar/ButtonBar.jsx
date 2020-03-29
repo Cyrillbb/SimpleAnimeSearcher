@@ -1,9 +1,10 @@
 import React from 'react'
 import { sortTypes } from '../../../constants'
+import './buttonBar.css'
 
 function ButtonBar(props) {
     return (
-        <div>
+        <div className='buttonBar'>
             <button value={sortTypes.byRating} onClick={props.sort}>
                 Top rated
             </button>

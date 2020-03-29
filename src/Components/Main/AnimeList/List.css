@@ -1,0 +1,7 @@
+.list {
+    background-color: #001f3f;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+    
+}
