@@ -25,7 +25,7 @@ export class Main extends React.Component {
     }
 
     componentDidMount() {
-        if (localStorage.length > 0) {           
+        if (localStorage.length > 0) {
             this.setState({
                 favorites: JSON.parse(localStorage.getItem('1')),
                 favId: JSON.parse(localStorage.getItem('2'))
@@ -63,10 +63,8 @@ export class Main extends React.Component {
                 pgOffset: 0
             },
             () => {
-                setTimeout(() => {
-                    fetcher(urlConstructor(this.state))
-                        .then(data => this.setState({ searchResults: data }))
-                }, 600);
+                fetcher(urlConstructor(this.state))
+                    .then(data => this.setState({ searchResults: data }))
             }
         )
     }
