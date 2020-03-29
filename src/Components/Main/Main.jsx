@@ -103,7 +103,7 @@ export class Main extends React.Component {
             <Router>
                 <Header sort={this.handleButtonSort} search={this.handleSearch} />
                 <Switch>
-                    <Route exact path='/'>
+                    <Route exact path='/SimpleAnimeSearcher'>
                         <AnimeList
                             animeArr={this.state.searchResults} more={this.handleMore} fav={this.handleFav}
                             favArr={this.state.favorites}

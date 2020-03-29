@@ -6,7 +6,7 @@ export function SearchBar(props) {
     return (
         <div className='searchBar'>
             <input className='input' type="text" placeholder='Search anime' onChange={props.search} />
-            <Link className='link' to='/'>Home</Link>
+            <Link className='link' to='/SimpleAnimeSearcher'>Home</Link>
             <Link className='link' to='/favorites'>Favorites</Link>
         </div>
     )
