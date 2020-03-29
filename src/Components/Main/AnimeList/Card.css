@@ -3,7 +3,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    width: 400px;
     border: solid black 2px;
     margin: auto;
     margin-top: 10px;
@@ -30,7 +30,7 @@
 }
 
 .cardGrow img {
-    max-width: 420px;    
+    width: 420px;    
 }
 
 .cardGrow h3 {
@@ -39,7 +39,7 @@
     padding: 10px;
     line-break: normal;
     background-color: black;
-    max-width: 400px;
+    width: 400px;
 }
 
 .cardGrow p {
@@ -48,7 +48,7 @@
     padding: 10px;
     line-break: normal;   
     background-color: black;
-    max-width: 400px;
+    width: 400px;
 }
 
 .desc {
@@ -57,11 +57,11 @@
     padding: 10px;
     line-break: normal;   
     background-color: black;
-    max-width: 400px;
+    width: 400px;
 }
 
 .cardGrow button {
-    max-width: 420px;
+    width: 420px;
 }
 
 .card h3 {
@@ -84,7 +84,7 @@
 }
 
 .cardButton {
-    background-color: rgb(0, 0, 0); /* Green */
+    background-color: rgb(0, 0, 0);
     border: none;
     color: white;
     padding: 15px 32px;
