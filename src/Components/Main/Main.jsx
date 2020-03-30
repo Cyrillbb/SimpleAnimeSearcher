@@ -67,7 +67,7 @@ export class Main extends React.Component {
                     .then(data => this.setState({ searchResults: data }))
             }
         )
-    }, 1000)
+    }, 700)
 
     handleMore = () => {
         this.setState(
