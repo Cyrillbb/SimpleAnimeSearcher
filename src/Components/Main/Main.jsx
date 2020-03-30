@@ -9,6 +9,7 @@ import Header from './Header/Header'
 import { queryParts, sortTypes } from '../constants'
 import { AnimeList } from './AnimeList/AnimeList'
 import { Favorites } from './AnimeList/FavoritesList'
+import _, { debounce } from 'lodash';
 
 export class Main extends React.Component {
     constructor(props) {
@@ -56,10 +57,10 @@ export class Main extends React.Component {
         )
     }
 
-    handleSearch = (event) => {
+    handleSearch =  debounce(() => {
         this.setState(
             {
-                searchInput: event.target.value,
+                searchInput: document.getElementById('search').value,
                 pgOffset: 0
             },
             () => {
@@ -67,7 +68,7 @@ export class Main extends React.Component {
                     .then(data => this.setState({ searchResults: data }))
             }
         )
-    }
+    }, 1000)
 
     handleMore = () => {
         this.setState(
