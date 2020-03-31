@@ -93,7 +93,7 @@ export class Main extends React.Component {
         console.log(this.state)
         this.setState(
             {
-                searchInput: queryParts.categSearch + name,                
+                searchInput: queryParts.categSearch + name + queryParts.mostPop,                
             },
             () => {
                 fetcher(urlConstructor(this.state))
