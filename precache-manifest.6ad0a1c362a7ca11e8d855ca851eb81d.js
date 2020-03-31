@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d9b7499a0ba0c00469247b15f7faac2",
+    "revision": "5044c61b1afd1a8e1b72334016896bff",
     "url": "/SimpleAnimeSearcher/index.html"
   },
   {
-    "revision": "78cd4ab88a4d2d07ed12",
+    "revision": "79eeec07746a6ec17a3b",
     "url": "/SimpleAnimeSearcher/static/css/main.29e164ad.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SimpleAnimeSearcher/static/js/2.f7a36455.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "78cd4ab88a4d2d07ed12",
-    "url": "/SimpleAnimeSearcher/static/js/main.5c2134d9.chunk.js"
+    "revision": "79eeec07746a6ec17a3b",
+    "url": "/SimpleAnimeSearcher/static/js/main.d9207e48.chunk.js"
   },
   {
     "revision": "a79aee056d52e63941c9",
