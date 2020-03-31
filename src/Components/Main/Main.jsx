@@ -66,7 +66,7 @@ export class Main extends React.Component {
     handleSearch = debounce(() => {
         this.setState(
             {
-                searchInput: document.getElementById('search').value,
+                searchInput: queryParts.nameSearch + document.getElementById('search').value,
                 pgOffset: 0,
                 categoryName: ''
             },
@@ -93,8 +93,7 @@ export class Main extends React.Component {
         console.log(this.state)
         this.setState(
             {
-                searchInput: queryParts.categSearch + name,
-                searchResults: [],
+                searchInput: queryParts.categSearch + name,                
             },
             () => {
                 fetcher(urlConstructor(this.state))

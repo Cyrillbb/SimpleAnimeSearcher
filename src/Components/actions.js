@@ -12,7 +12,7 @@ export const urlConstructor = (state) => {
     // }
 
     else {
-        return queryParts.apiURL + queryParts.nameSearch + state.searchInput + queryParts.mostPop + queryParts.pageLim + queryParts.resultsNum + queryParts.pageOff + state.pgOffset + queryParts.filter
+        return queryParts.apiURL + state.searchInput + queryParts.mostPop + queryParts.pageLim + queryParts.resultsNum + queryParts.pageOff + state.pgOffset + queryParts.filter
     }
 
 }

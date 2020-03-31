@@ -9,13 +9,13 @@ export function Categories(props) {
                 Categories
             </div>
             <div className='categoriesList'>
-                {props.categories.map(item => <li><Link
+                {props.categories.map(item => <Link
                     to='/SimpleAnimeSearcher'
                     className='catLink'
                     key={item.id}
                     onClick={() => { props.catSearch(item.attributes.title) }}>
                     {item.attributes.title}
-                </Link></li>)}
+                </Link>)}
             </div>
         </div>
     )
