@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SimpleAnimeSearcher/static/css/main.d0216602.chunk.css",
-    "main.js": "/SimpleAnimeSearcher/static/js/main.f68c447e.chunk.js",
-    "main.js.map": "/SimpleAnimeSearcher/static/js/main.f68c447e.chunk.js.map",
+    "main.css": "/SimpleAnimeSearcher/static/css/main.19b296a1.chunk.css",
+    "main.js": "/SimpleAnimeSearcher/static/js/main.5c2134d9.chunk.js",
+    "main.js.map": "/SimpleAnimeSearcher/static/js/main.5c2134d9.chunk.js.map",
     "runtime-main.js": "/SimpleAnimeSearcher/static/js/runtime-main.070c8591.js",
     "runtime-main.js.map": "/SimpleAnimeSearcher/static/js/runtime-main.070c8591.js.map",
-    "static/js/2.2b39efc7.chunk.js": "/SimpleAnimeSearcher/static/js/2.2b39efc7.chunk.js",
-    "static/js/2.2b39efc7.chunk.js.map": "/SimpleAnimeSearcher/static/js/2.2b39efc7.chunk.js.map",
+    "static/js/2.f7a36455.chunk.js": "/SimpleAnimeSearcher/static/js/2.f7a36455.chunk.js",
+    "static/js/2.f7a36455.chunk.js.map": "/SimpleAnimeSearcher/static/js/2.f7a36455.chunk.js.map",
     "index.html": "/SimpleAnimeSearcher/index.html",
-    "precache-manifest.7b490cdc0e3e8480257601f09d6d63cf.js": "/SimpleAnimeSearcher/precache-manifest.7b490cdc0e3e8480257601f09d6d63cf.js",
+    "precache-manifest.8c8af1899d633bc479ff8028761d7dc1.js": "/SimpleAnimeSearcher/precache-manifest.8c8af1899d633bc479ff8028761d7dc1.js",
     "service-worker.js": "/SimpleAnimeSearcher/service-worker.js",
-    "static/css/main.d0216602.chunk.css.map": "/SimpleAnimeSearcher/static/css/main.d0216602.chunk.css.map",
-    "static/js/2.2b39efc7.chunk.js.LICENSE.txt": "/SimpleAnimeSearcher/static/js/2.2b39efc7.chunk.js.LICENSE.txt"
+    "static/css/main.19b296a1.chunk.css.map": "/SimpleAnimeSearcher/static/css/main.19b296a1.chunk.css.map",
+    "static/js/2.f7a36455.chunk.js.LICENSE.txt": "/SimpleAnimeSearcher/static/js/2.f7a36455.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.070c8591.js",
-    "static/js/2.2b39efc7.chunk.js",
-    "static/css/main.d0216602.chunk.css",
-    "static/js/main.f68c447e.chunk.js"
+    "static/js/2.f7a36455.chunk.js",
+    "static/css/main.19b296a1.chunk.css",
+    "static/js/main.5c2134d9.chunk.js"
   ]
 }
