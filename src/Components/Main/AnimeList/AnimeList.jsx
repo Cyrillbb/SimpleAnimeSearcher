@@ -49,6 +49,8 @@ export function AnimeList(props) {
     )
 }
 
-AnimeCard.propTypes = {
-    animeArr: PropTypes.array
+AnimeList.propTypes = {
+    animeArr: PropTypes.array,
+    more: PropTypes.func,
+    favId: PropTypes.array,
 }

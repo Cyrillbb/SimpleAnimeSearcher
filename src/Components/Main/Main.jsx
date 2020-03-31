@@ -9,6 +9,7 @@ import Header from './Header/Header'
 import { queryParts, sortTypes } from '../constants'
 import { AnimeList } from './AnimeList/AnimeList'
 import { Favorites } from './AnimeList/FavoritesList'
+import { Categories } from './Categories/Categories'
 
 export class Main extends React.Component {
     constructor(props) {
@@ -19,7 +20,9 @@ export class Main extends React.Component {
             searchResults: [],
             favorites: [],
             favId: [],
+            categories: [],
             pgOffset: 0,
+            categoryName: ''
         }
 
     }
@@ -33,6 +36,9 @@ export class Main extends React.Component {
         }
         fetcher(urlConstructor(this.state))
             .then(data => this.setState({ searchResults: data }))
+        fetcher(queryParts.categories)
+            .then(data => this.setState(
+                { categories: data }), console.log(this.state))
     }
 
     componentDidUpdate() {
@@ -47,7 +53,8 @@ export class Main extends React.Component {
             {
                 searchType: event.target.value,
                 searchInput: '',
-                pgOffset: 0
+                pgOffset: 0,
+                categoryName: ''
             },
             () => {
                 fetcher(urlConstructor(this.state))
@@ -60,7 +67,8 @@ export class Main extends React.Component {
         this.setState(
             {
                 searchInput: document.getElementById('search').value,
-                pgOffset: 0
+                pgOffset: 0,
+                categoryName: ''
             },
             () => {
                 fetcher(urlConstructor(this.state))
@@ -80,7 +88,22 @@ export class Main extends React.Component {
             }
         )
     }
-    // Adds clicked item to favorites and also removes them
+
+    handleSearchByCat = (name) => {
+        console.log(this.state)
+        this.setState(
+            {
+                searchInput: queryParts.categSearch + name,
+                searchResults: [],
+            },
+            () => {
+                fetcher(urlConstructor(this.state))
+                    .then(data => this.setState({ searchResults: data }))
+            }
+        )
+    }
+
+    // Adds clicked items to favorites and also removes them
     handleFav = (item) => {
         localStorage.clear()
         if (this.state.favorites.indexOf(item) === -1 && this.state.favId.indexOf(item.id) === -1) {
@@ -101,7 +124,7 @@ export class Main extends React.Component {
     render() {
         return (
             <Router>
-                <Header sort={this.handleButtonSort} search={this.handleSearch} />
+                <Header sort={this.handleButtonSort} search={this.handleSearch} categories={this.handleGetCategories} />
                 <Switch>
                     <Route exact path='/SimpleAnimeSearcher'>
                         <AnimeList
@@ -113,6 +136,10 @@ export class Main extends React.Component {
                     <Route exact path='/SimpleAnimeSearcher/favorites'>
                         <Favorites favArr={this.state.favorites} fav={this.handleFav} />
                     </Route>
+                    <Route exact path='/SimpleAnimeSearcher/categories'>
+                        <Categories categories={this.state.categories} catSearch={this.handleSearchByCat} />
+                    </Route>
+
                 </Switch>
             </Router>
         )

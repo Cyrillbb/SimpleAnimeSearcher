@@ -1,5 +1,6 @@
 import React from 'react'
 import { sortTypes } from '../../../constants'
+import { Link } from 'react-router-dom'
 import './buttonBar.css'
 
 function ButtonBar(props) {
@@ -14,6 +15,9 @@ function ButtonBar(props) {
             <button value={sortTypes.byTopAir} onClick={props.sort}>
                 Top Airing
             </button>
+            <Link className='linkButton' to='/SimpleAnimeSearcher/categories'>
+                Categories
+            </Link>
         </div>
     )
 }
